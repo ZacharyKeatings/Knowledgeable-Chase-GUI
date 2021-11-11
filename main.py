@@ -10,11 +10,14 @@ root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 root.columnconfigure(2, weight=1)
 
-#test Button
-login_button = ttk.Button(root, text="Login")
+#Main Menu
+login_button = ttk.Button(root, text="Add/Edit/Delete Trivia Database")
 login_button.grid(column=1,row=0,pady=5)
-log_button = ttk.Button(root, text="Login")
-log_button.grid(column=1,row=1,pady=5)
-
+log_button = ttk.Button(root, text="Get A Question")
+log_button.grid(column=1,row=2,pady=5)
+log_button = ttk.Button(root, text="Roll A Die")
+log_button.grid(column=1,row=3,pady=5)
+log_button = ttk.Button(root, text="Exit")
+log_button.grid(column=1,row=4,pady=5)
 
 root.mainloop()
