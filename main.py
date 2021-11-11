@@ -24,29 +24,11 @@ def die_roll():
     roll_result.grid(column=1, row=0, sticky="S")
     roll_again = ttk.Button(roll, text="Roll Again")
     roll_again.grid(column=1, row=1, sticky="W")
-    main_menu = ttk.Button(roll, text="Main Menu")
+    main_menu = ttk.Button(roll, text="Main Menu", command=lambda:root.mainloop())
     main_menu.grid(column=1, row=1, sticky="E")
 
     def roll_outcome():
         pass
-
-    #This shows in the console:
-    dice_number = random.choice([1,2,3,4,5,6])
-    answers = ["Yes", "No"]
-    choice = input("Would you like to roll? Yes or No.\n")
-    choice = choice.capitalize()
-    if choice == "No":
-        clear_screen()
-        print("You just returned from the die roll screen.\n")
-        main_menu()
-    elif choice == "Yes":
-        clear_screen()
-        print(f"You rolled: {dice_number}.\n")
-        die_roll()
-    if choice not in answers:
-        clear_screen()
-        print("That is not a correct selection. Please try again.\n")
-        die_roll()
 
 #Main Menu
 main_title = tk.Label(root, text="""Trivial Pursuit Assistant Edition\n
