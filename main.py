@@ -18,14 +18,16 @@ def die_roll():
     roll.rowconfigure([0,1], minsize=10, weight=1)
     roll.columnconfigure([0,1,2], minsize=10, weight=1)
     
-    roll_result = tk.Label(roll, text="Roll result")
+    dice_number = random.choice([1,2,3,4,5,6])
+
+    roll_result = tk.Label(roll, text="Roll result:\n\n{}".format(dice_number))
     roll_result.grid(column=1, row=0, sticky="S")
     roll_again = ttk.Button(roll, text="Roll Again")
     roll_again.grid(column=1, row=1, sticky="W")
     main_menu = ttk.Button(roll, text="Main Menu")
     main_menu.grid(column=1, row=1, sticky="E")
 
-    def roll_result():
+    def roll_outcome():
         pass
 
     #This shows in the console:
