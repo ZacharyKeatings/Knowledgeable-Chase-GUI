@@ -11,6 +11,11 @@ root.rowconfigure([0, 1, 2, 3, 4], minsize=10, weight=1)
 root.columnconfigure([0, 1, 2], minsize=10, weight=1)
 
 def die_roll():
+
+    def roll_outcome():
+        dice_number = random.choice([1,2,3,4,5,6])
+        print(dice_number)
+
     #This shows in the GUI:
     roll = tk.Tk()
     roll.title("Die Roll")
@@ -19,15 +24,12 @@ def die_roll():
     roll.columnconfigure([0,1,2], minsize=10, weight=1)
 
     roll_result = tk.Label(roll, text="Roll result:")
+    print(roll_outcome())
     roll_result.grid(column=1, row=0, sticky="S")
-    roll_again = ttk.Button(roll, text="Roll Again")
+    roll_again = ttk.Button(roll, text="Roll Again", command=roll_outcome)
     roll_again.grid(column=1, row=1, sticky="W")
     main_menu = ttk.Button(roll, text="Main Menu", command=lambda:root.mainloop())
     main_menu.grid(column=1, row=1, sticky="E")
-
-    def roll_outcome():
-        dice_number = random.choice([1,2,3,4,5,6])
-        print(dice_number)
 
 #Main Menu
 main_title = tk.Label(root, text="""Trivial Pursuit Assistant Edition\n
