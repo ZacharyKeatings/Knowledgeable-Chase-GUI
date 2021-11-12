@@ -17,8 +17,6 @@ def die_roll():
     roll.geometry("400x300")
     roll.rowconfigure([0,1], minsize=10, weight=1)
     roll.columnconfigure([0,1,2], minsize=10, weight=1)
-    
-    dice_number = random.choice([1,2,3,4,5,6])
 
     roll_result = tk.Label(roll, text="Roll result:\n\n{}".format(dice_number))
     roll_result.grid(column=1, row=0, sticky="S")
@@ -28,7 +26,8 @@ def die_roll():
     main_menu.grid(column=1, row=1, sticky="E")
 
     def roll_outcome():
-        pass
+        dice_number = random.choice([1,2,3,4,5,6])
+        print(dice_number)
 
 #Main Menu
 main_title = tk.Label(root, text="""Trivial Pursuit Assistant Edition\n
