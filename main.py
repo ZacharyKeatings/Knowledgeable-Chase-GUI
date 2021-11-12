@@ -18,7 +18,7 @@ def die_roll():
     roll.rowconfigure([0,1], minsize=10, weight=1)
     roll.columnconfigure([0,1,2], minsize=10, weight=1)
 
-    roll_result = tk.Label(roll, text="Roll result:\n\n{}".format(dice_number))
+    roll_result = tk.Label(roll, text="Roll result:\n\n")
     roll_result.grid(column=1, row=0, sticky="S")
     roll_again = ttk.Button(roll, text="Roll Again")
     roll_again.grid(column=1, row=1, sticky="W")
