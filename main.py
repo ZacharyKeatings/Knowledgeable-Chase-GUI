@@ -15,17 +15,30 @@ frame.place(height=300, width=400)
 root.rowconfigure([0, 1, 2, 3, 4], weight=1)
 root.columnconfigure([0, 1, 2], weight=1)
 
-def add_trivia():
-    label=tk.Label(frame,text='this is the page2')
-    label.place(relx=0.3,rely=0.4)
 
-def edit_trivia():
-    label=tk.Label(frame,text='this is the page3')
-    label.place(relx=0.3,rely=0.4)
 
-def delete_trivia():
-    label=tk.Label(frame,text='this is the page3')
-    label.place(relx=0.3,rely=0.4)
+def view_database():
+
+    def add_trivia():
+        label=tk.Label(frame,text='this is the page2')
+        label.place(relx=0.3,rely=0.4)
+
+    def edit_trivia():
+        label=tk.Label(frame,text='this is the page3')
+        label.place(relx=0.3,rely=0.4)
+
+    def delete_trivia():
+        label=tk.Label(frame,text='this is the page3')
+        label.place(relx=0.3,rely=0.4)
+
+    add=tk.Button(root,text='Add',command=add_trivia)
+    add.grid(column=0,row=0)
+
+    edit=tk.Button(root,text='Edit',command=edit_trivia)
+    edit.grid(row=0,column=1)
+
+    delete=tk.Button(root,text='Delete',command=delete_trivia)
+    delete.grid(row=0,column=2)
 
 def die_roll():
 
@@ -58,7 +71,7 @@ main_title = tk.Label(root, text="""Trivial Pursuit Assistant Edition\n
 Please choose an option:""")
 main_title.place(width=width, height=height)
 main_title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
-login_button = ttk.Button(root, text="Add/Edit/Delete Database")
+login_button = ttk.Button(root, text="Add/Edit/Delete Database", command=view_database)
 login_button.grid(column=0,row=1,columnspan=3, sticky="NSEW")
 log_button = ttk.Button(root, text="Get A Question")
 log_button.grid(column=0,row=2,columnspan=3, sticky="NSEW")
@@ -68,16 +81,3 @@ log_button = ttk.Button(root, text="Exit")
 log_button.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 root.mainloop()
-
-###########################
-# bt=tk.Button(root,text='page1',command=page1)
-# bt.grid(column=0,row=0)
-
-# bt1=tk.Button(root,text='page2',command=page2)
-# bt1.grid(row=0,column=1)
-
-# bt2=tk.Button(root,text='page3',command=page3)
-# bt2.grid(row=0,column=2)
-
-# root.mainloop()
-###########################
