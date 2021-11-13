@@ -9,36 +9,41 @@ width = 250
 root.geometry("{}x{}".format(width, height))
 
 frame=tk.Frame(root)
-frame.place(height=300, width=400)
+frame.place(height=300, width=250)
 
 # configure the grid
 root.rowconfigure([0, 1, 2, 3, 4], weight=1)
 root.columnconfigure([0, 1, 2], weight=1)
 
-
-
 def view_database():
 
     def add_trivia():
-        label=tk.Label(frame,text='this is the page2')
+        label=tk.Label(root,text='this is the page2')
         label.place(relx=0.3,rely=0.4)
 
     def edit_trivia():
-        label=tk.Label(frame,text='this is the page3')
+        label=tk.Label(root,text='this is the page3')
         label.place(relx=0.3,rely=0.4)
 
     def delete_trivia():
-        label=tk.Label(frame,text='this is the page3')
+        label=tk.Label(root,text='this is the page3')
         label.place(relx=0.3,rely=0.4)
 
+    title=tk.Label(root,text='Modify Database')
+    title.place(width=width,height=height)
+    title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
+
     add=tk.Button(root,text='Add',command=add_trivia)
-    add.grid(column=0,row=0)
+    add.grid(column=0,row=1,columnspan=3, sticky="NSEW")
 
     edit=tk.Button(root,text='Edit',command=edit_trivia)
-    edit.grid(row=0,column=1)
+    edit.grid(column=0,row=2,columnspan=3, sticky="NSEW")
 
     delete=tk.Button(root,text='Delete',command=delete_trivia)
-    delete.grid(row=0,column=2)
+    delete.grid(column=0,row=3,columnspan=3, sticky="NSEW")
+
+    back=tk.Button(root,text='Back',command=root.mainloop)
+    back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 def die_roll():
 
