@@ -9,7 +9,7 @@ root.geometry("400x300")
 # configure the grid
 root.rowconfigure([0, 1, 2, 3, 4], minsize=10, weight=1)
 root.columnconfigure([0, 1, 2], minsize=10, weight=1)
-
+#This is a test.
 def die_roll():
 
     def roll_outcome():
