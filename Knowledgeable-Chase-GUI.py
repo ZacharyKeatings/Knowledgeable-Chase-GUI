@@ -26,9 +26,9 @@ def main_title():
     main_title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
     login_button = ttk.Button(root, text="Add/Edit/Delete Database", command=modify_database)
     login_button.grid(column=0,row=1,columnspan=3, sticky="NSEW")
-    log_button = ttk.Button(root, text="Get A Question")
+    log_button = ttk.Button(root, text="Get A Question", command=get_question)
     log_button.grid(column=0,row=2,columnspan=3, sticky="NSEW")
-    log_button = ttk.Button(root, text="Roll A Die")
+    log_button = ttk.Button(root, text="Roll A Die", command=die_roll)
     log_button.grid(column=0,row=3,columnspan=3, sticky="NSEW")
     log_button = ttk.Button(root, text="Exit", command=quit_program)
     log_button.grid(column=0,row=4,columnspan=3, sticky="NSEW")
@@ -55,23 +55,49 @@ def modify_database():
 def add_trivia():
     title=tk.Label(root,text='Add Trivia')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+
+    back=tk.Button(root,text='Back', command=modify_database)
+    back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 #Edit database
 def edit_trivia():
     title=tk.Label(root,text='Edit Trivia')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+
+    back=tk.Button(root,text='Back', command=modify_database)
+    back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 #Delete from database
 def delete_trivia():
     title=tk.Label(root,text='Delete Trivia')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+
+    back=tk.Button(root,text='Back', command=modify_database)
+    back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 #Get question from database (Question, then answer)
 def get_question():
-    pass
+    title=tk.Label(root,text='Get A Question')
+    title.place(width=window_width,height=window_height)
+    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+
+    back=tk.Button(root,text='Back', command=main_title)
+    back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
+
+def die_roll():
+    sides=random.choice([1,2,3,4,5,6])
+    title=tk.Label(root,text='Roll The Dice:\n{}'.format(sides))
+    title.place(width=window_width,height=window_height)
+    title.grid(column=0,row=0,columnspan=3, rowspan=3, sticky="NSEW")
+
+    reroll=tk.Button(root,text="Reroll", command=die_roll)
+    reroll.grid(column=0,row=3,columnspan=3, sticky="NSEW")
+
+    back=tk.Button(root,text='Back', command=main_title)
+    back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 #Closes program
 def quit_program():
