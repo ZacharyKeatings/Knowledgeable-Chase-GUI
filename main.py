@@ -4,49 +4,70 @@ from tkinter import ttk
 
 root = tk.Tk()
 root.title("Knowledgeable Chase")
-root.geometry("400x300")
+height = 300
+width = 250
+root.geometry("{}x{}".format(width, height))
+
+frame=tk.Frame(root)
+frame.place(height=300, width=400)
 
 # configure the grid
-root.rowconfigure([0, 1, 2, 3, 4], minsize=10, weight=1)
-root.columnconfigure([0, 1, 2], minsize=10, weight=1)
-#This is a test.
+root.rowconfigure([0, 1, 2, 3, 4], weight=1)
+root.columnconfigure([0, 1, 2], weight=1)
+
+def page2():
+    label=tk.Label(frame,text='this is the page2')
+    label.place(relx=0.3,rely=0.4)
+
+def page3():
+    label=tk.Label(frame,text='this is the page3')
+    label.place(relx=0.3,rely=0.4)
+
 def die_roll():
 
     def roll_outcome():
         dice_number = random.choice([1,2,3,4,5,6])
-        print(dice_number)
+        return dice_number
 
     #This shows in the GUI:
     roll = tk.Tk()
     roll.title("Die Roll")
-    roll.geometry("400x300")
+    roll.geometry("{}x{}".format(width, height))
     roll.rowconfigure([0,1], minsize=10, weight=1)
     roll.columnconfigure([0,1,2], minsize=10, weight=1)
 
     roll_result = tk.Label(roll, text="Roll result:")
-    print(roll_outcome())
     roll_result.grid(column=1, row=0, sticky="S")
     roll_again = ttk.Button(roll, text="Roll Again", command=roll_outcome)
     roll_again.grid(column=1, row=1, sticky="W")
     main_menu = ttk.Button(roll, text="Main Menu", command=lambda:root.mainloop())
     main_menu.grid(column=1, row=1, sticky="E")
 
-#Main Menu
 main_title = tk.Label(root, text="""Trivial Pursuit Assistant Edition\n
 ===================\n
 Please choose an option:""")
-main_title.grid(column=1,row=0)
-login_button = ttk.Button(root, text="Add/Edit/Delete Database", width=20)
-login_button.grid(column=1,row=1)
-log_button = ttk.Button(root, text="Get A Question", width=20)
-log_button.grid(column=1,row=2)
-log_button = ttk.Button(root, text="Roll A Die", width=20, command=die_roll)
-log_button.grid(column=1,row=3)
-log_button = ttk.Button(root, text="Exit", width=20)
-log_button.grid(column=1,row=4)
-
-
-
-
+main_title.place(width=width, height=height)
+main_title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
+login_button = ttk.Button(root, text="Add/Edit/Delete Database")
+login_button.grid(column=0,row=1,columnspan=3, sticky="NSEW")
+log_button = ttk.Button(root, text="Get A Question")
+log_button.grid(column=0,row=2,columnspan=3, sticky="NSEW")
+log_button = ttk.Button(root, text="Roll A Die", command=die_roll)
+log_button.grid(column=0,row=3,columnspan=3, sticky="NSEW")
+log_button = ttk.Button(root, text="Exit")
+log_button.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 root.mainloop()
+
+###########################
+# bt=tk.Button(root,text='page1',command=page1)
+# bt.grid(column=0,row=0)
+
+# bt1=tk.Button(root,text='page2',command=page2)
+# bt1.grid(row=0,column=1)
+
+# bt2=tk.Button(root,text='page3',command=page3)
+# bt2.grid(row=0,column=2)
+
+# root.mainloop()
+###########################
