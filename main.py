@@ -15,11 +15,15 @@ frame.place(height=300, width=400)
 root.rowconfigure([0, 1, 2, 3, 4], weight=1)
 root.columnconfigure([0, 1, 2], weight=1)
 
-def page2():
+def add_trivia():
     label=tk.Label(frame,text='this is the page2')
     label.place(relx=0.3,rely=0.4)
 
-def page3():
+def edit_trivia():
+    label=tk.Label(frame,text='this is the page3')
+    label.place(relx=0.3,rely=0.4)
+
+def delete_trivia():
     label=tk.Label(frame,text='this is the page3')
     label.place(relx=0.3,rely=0.4)
 
@@ -42,6 +46,12 @@ def die_roll():
     roll_again.grid(column=1, row=1, sticky="W")
     main_menu = ttk.Button(roll, text="Main Menu", command=lambda:root.mainloop())
     main_menu.grid(column=1, row=1, sticky="E")
+
+def close_app():
+    label=tk.Label(frame,text='this is the page3')
+    label.place(relx=0.3,rely=0.4)
+
+
 
 main_title = tk.Label(root, text="""Trivial Pursuit Assistant Edition\n
 ===================\n
