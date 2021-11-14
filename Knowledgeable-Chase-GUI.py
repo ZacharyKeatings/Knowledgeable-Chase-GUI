@@ -88,10 +88,15 @@ def get_question():
     back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
 
 def die_roll():
-    sides=random.choice([1,2,3,4,5,6])
-    title=tk.Label(root,text='Roll The Dice:\n{}'.format(sides))
+    sides=random.choice(["\u2680","\u2681","\u2682","\u2683","\u2684","\u2685"])
+
+    title=tk.Label(root,text='Roll The Dice:')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, rowspan=3, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
+
+    result=tk.Label(root, font=("Arial", 48), text='{}'.format(sides))
+    result.place(width=window_width,height=window_height)
+    result.grid(column=0,row=1,columnspan=3, rowspan=2, sticky="NSEW")
 
     reroll=tk.Button(root,text="Reroll", command=die_roll)
     reroll.grid(column=0,row=3,columnspan=3, sticky="NSEW")
