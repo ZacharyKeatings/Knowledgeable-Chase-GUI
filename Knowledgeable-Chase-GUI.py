@@ -53,18 +53,34 @@ def modify_database():
 
 #Add to database
 def add_trivia():
-    title=tk.Label(root,text='Add Trivia')
+    title=tk.Label(root,text='Add A Question:')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
+
+    question=tk.Label(root, text='Question:')
+    question.place(width=window_width, height=window_height)
+    question.grid(column=0, row=1, sticky="NW")
+
+    answer=tk.Label(root, text='Answer:')
+    answer.place(width=window_width, height=window_height)
+    answer.grid(column=0, row=2, sticky="NW")
+
+    difficulty=tk.Label(root, text='Difficulty:')
+    difficulty.place(width=window_width, height=window_height)
+    difficulty.grid(column=0, row=3, sticky="NW")
+
+    category=tk.Label(root, text='Category:')
+    category.place(width=window_width, height=window_height)
+    category.grid(column=0, row=4, sticky="NW")
 
     back=tk.Button(root,text='Back', command=modify_database)
-    back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
+    back.grid(column=0,row=4,columnspan=3, sticky="SE")
 
 #Edit database
 def edit_trivia():
     title=tk.Label(root,text='Edit Trivia')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, rowspan=4, sticky="NSEW")
 
     back=tk.Button(root,text='Back', command=modify_database)
     back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
@@ -73,7 +89,7 @@ def edit_trivia():
 def delete_trivia():
     title=tk.Label(root,text='Delete Trivia')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, rowspan=4, sticky="NSEW")
 
     back=tk.Button(root,text='Back', command=modify_database)
     back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
@@ -82,7 +98,10 @@ def delete_trivia():
 def get_question():
     title=tk.Label(root,text='Get A Question')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, rowspan=5, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, rowspan=3, sticky="NSEW")
+
+    Reroll=tk.Button(root,text='Show Answer', command=main_title)
+    Reroll.grid(column=0,row=3,columnspan=3, sticky="NSEW")
 
     back=tk.Button(root,text='Back', command=main_title)
     back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
