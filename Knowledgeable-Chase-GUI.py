@@ -98,13 +98,27 @@ def delete_trivia():
 def get_question():
     title=tk.Label(root,text='Get A Question')
     title.place(width=window_width,height=window_height)
-    title.grid(column=0,row=0,columnspan=3, rowspan=3, sticky="NSEW")
+    title.grid(column=0,row=0,columnspan=3, sticky="NSEW")
 
-    Reroll=tk.Button(root,text='Show Answer', command=main_title)
-    Reroll.grid(column=0,row=3,columnspan=3, sticky="NSEW")
+    difficulty=tk.Label(root, text='Choose Difficulty:')
+    difficulty.place(width=window_width, height=window_height)
+    difficulty.grid(column=0, row=1, sticky="NW")
+
+    category=tk.Label(root, text='Choose Category:')
+    category.place(width=window_width, height=window_height)
+    category.grid(column=0, row=2, sticky="NW")
+
+    show_question=tk.Button(root,text='Show Question', command=main_title)
+    show_question.grid(column=0,row=3,columnspan=3, sticky="NSEW")
 
     back=tk.Button(root,text='Back', command=main_title)
     back.grid(column=0,row=4,columnspan=3, sticky="NSEW")
+
+def show_question():
+    pass
+
+def get_answer():
+    pass
 
 def die_roll():
     sides=random.choice(["\u2680","\u2681","\u2682","\u2683","\u2684","\u2685"])
